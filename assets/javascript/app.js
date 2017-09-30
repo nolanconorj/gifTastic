@@ -15,18 +15,49 @@ function displayTeamInfo() {
                 var gifDiv = $("<div class='item'>");
                 var rating = results[i].rating;
                 var p = $("<p>").text("Rating: " + rating);
-                var teamImage = $("<img>");
-                teamImage.attr("src", results[i].images.fixed_height.url);
+                var teamImage = $("<img class='image' data-state='still'>");
+                teamImage.attr("src", results[i].images.fixed_height_still.url)
+                teamImage.attr("data-animate", results[i].images.fixed_height.url)
+                teamImage.attr("data-still", results[i].images.fixed_height_still.url)
                 gifDiv.prepend(p);
                 gifDiv.prepend(teamImage);
                 console.log(gifDiv);
-                            $("#teams-appear-here").prepend(gifDiv);
+                $("#teams-appear-here").prepend(gifDiv);
+
 
 
             }
+            $(".image").on("click", function() {
+                //alert("hi");
+
+                var state = $(this).attr("data-state");
+                // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                // Then, set the image's data-state to animate
+                // Else set src to the data-still value
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                } else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                }
+
+                //teamImage.attr("src", results[i].images.fixed_height.url).attr("animate")
+                // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                // Then, set the image's data-state to animate
+                // Else set src to the data-still value
+                //if (state === "still") {
+
+
+
+
+            });
         });
 
 };
+
+
+
 
 function renderButtons() {
     // Deleting the movies prior to adding new movies
@@ -60,6 +91,20 @@ function renderButtons() {
 $(document).on("click", ".teams-created", displayTeamInfo);
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
+
+$(".image").on("click", function() {
+    alert("hi");
+});
+//teamImage.attr("src", results[i].images.fixed_height.url);
+
+
+
+
+
+
+
+
+
 //________________TO DO_________-------------------------------
 //empty div. so only 10 gifs on page at a time
 //how to pause and start gifs
