@@ -77,7 +77,10 @@ function renderButtons() {
         $("#teamButtons").append(a);
     }
     // This function handles events where a movie button is clicked
-    $("#addTeam").on("click", function(event) {
+    
+};
+
+$("#addTeam").on("click", function(event) {
         event.preventDefault();
         // This line grabs the input from the textbox
         var newTeam = $("#team-input").val().trim();
@@ -86,15 +89,12 @@ function renderButtons() {
         // Calling renderButtons which handles the processing of our movie array
         renderButtons();
     });
-};
 // Adding a click event listener to all elements with a class of "movie"
 $(document).on("click", ".teams-created", displayTeamInfo);
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
 
-$(".image").on("click", function() {
-    alert("hi");
-});
+
 //teamImage.attr("src", results[i].images.fixed_height.url);
 
 
