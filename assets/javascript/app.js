@@ -1,5 +1,6 @@
 var topics = ["Los Angeles Lakers", "New York Yankees", "Dallas Cowboys", "Chicago Blackhawks", "Manchester United"];
 
+
 function displayTeamInfo() {
     var team = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -11,6 +12,7 @@ function displayTeamInfo() {
         .done(function(response) {
             var results = response.data;
             console.log(results);
+            $("#teams-appear-here").empty(gifDiv);
             for (var i = 0; i < results.length; i++) {
                 var gifDiv = $("<div class='item'>");
                 var rating = results[i].rating;
@@ -22,11 +24,16 @@ function displayTeamInfo() {
                 gifDiv.prepend(p);
                 gifDiv.prepend(teamImage);
                 console.log(gifDiv);
-                $("#teams-appear-here").prepend(gifDiv);
+
+
+            $("#teams-appear-here").prepend(gifDiv);
+
+
 
 
 
             }
+
             $(".image").on("click", function() {
                 //alert("hi");
 
@@ -77,18 +84,18 @@ function renderButtons() {
         $("#teamButtons").append(a);
     }
     // This function handles events where a movie button is clicked
-    
+
 };
 
 $("#addTeam").on("click", function(event) {
-        event.preventDefault();
-        // This line grabs the input from the textbox
-        var newTeam = $("#team-input").val().trim();
-        // Adding movie from the textbox to our array
-        topics.push(newTeam);
-        // Calling renderButtons which handles the processing of our movie array
-        renderButtons();
-    });
+    event.preventDefault();
+    // This line grabs the input from the textbox
+    var newTeam = $("#team-input").val().trim();
+    // Adding movie from the textbox to our array
+    topics.push(newTeam);
+    // Calling renderButtons which handles the processing of our movie array
+    renderButtons();
+});
 // Adding a click event listener to all elements with a class of "movie"
 $(document).on("click", ".teams-created", displayTeamInfo);
 // Calling the renderButtons function to display the intial buttons
