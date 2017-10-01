@@ -1,4 +1,4 @@
-var topics = ["Los Angeles Lakers", "New York Yankees", "Dallas Cowboys", "Chicago Blackhawks", "Manchester United"];
+var topics = ["Los Angeles Lakers", "New York Yankees", "Denver Broncos", "Manchester United"];
 
 
 function displayTeamInfo() {

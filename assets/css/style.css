@@ -1,3 +1,101 @@
+body {
+	color: black;
+	background-image: url("../images/bulletin1.jpg");
+
+	/*text-align: center;*/
+	
+}
+
 h1{
+	font-family: 'Permanent Marker', cursive;, sans-serif;
+	color: black;
+	background-color: rgb(255, 246, 150);
+	font-size: 46px;
+	padding: 20px;
+	padding-bottom: 60px;
+    width: 20%;
+    text-align: center;
+}
+
+h2{
+	margin: 13px;
+	font-family: 'Permanent Marker', cursive;, sans-serif;
+	font-size: 32px;
+	color: #003399;
+}
+
+p{
 	color: red;
+	font-size: 22px;
+	background-color: rgb(255, 246, 150);
+	font-family: 'Permanent Marker', cursive;, sans-serif;
+	padding: 20px;
+    width: 25%;
+    text-align: center;
+}
+
+#teamButtons{
+	width: 50%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#team-form{
+	color: black;
+	background-color: rgb(255, 246, 150);
+	padding: 20px;
+    width: 20%;
+    text-align: center;
+}
+
+#team-input{
+	margin: 21px;
+
+}
+
+#teams-appear-here{
+	width: 40%;
+	position:absolute;
+   top:0;
+   right:0;
+}
+
+.item{
+	padding: 10px;
+	widows: auto;
+}
+
+.teams-created{
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 3px solid #008CBA;
+}
+
+.teams-created:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+
+
+img {
+	background-color: #F8F8F8;
+	padding: 11px;
+	padding-bottom: 85px;
+	width: 70%;
+    height: fit-content;
+	
+
 }
